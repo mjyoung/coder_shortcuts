@@ -15,6 +15,9 @@ class ShortcutsController < ApplicationController
   # GET /shortcuts/new
   def new
     @shortcut = Shortcut.new
+    @step = Step.new
+    @tag = Tag.new
+    @shortcut_tag = ShortcutTag.new
   end
 
   # GET /shortcuts/1/edit

@@ -1,4 +1,4 @@
-<%= form_for(@shortcut) do |f| %>
+<%= simple_form_for(@shortcut) do |f| %>
   <% if @shortcut.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@shortcut.errors.count, "error") %> prohibited this shortcut from being saved:</h2>
@@ -11,15 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <%= f.input :id, :as => :hidden %>
+  <%= f.input :title, placeholder: 'Shortcut Title' %>
+  <%= f.input :description, placeholder: 'Brief description for shortcut' %>
+
+    <%= simple_fields_for(@step) do |step| %>
+      <%= step.input :step_number, placeholder: 'Step number' %>
+      <%= step.input :text, as: :text, placeholder: 'Step text' %>
+      <%= step.input :image_url, placeholder: 'http://i.imgur.com/*.png' %>
+    <% end %>
+
+    <%= simple_fields_for(@tag) do |tag| %>
+      <%= tag.input :name, placeholder: 'Tag name' %>
+    <% end %>
+
+  <%= f.button :submit %>
+
 <% end %>
