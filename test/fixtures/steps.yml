@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shortcut_id: 
+  step_number: 1
+  text: MyText
+  image_url: MyString
+
+two:
+  shortcut_id: 
+  step_number: 1
+  text: MyText
+  image_url: MyString

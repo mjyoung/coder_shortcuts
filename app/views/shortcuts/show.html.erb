@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @shortcut.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shortcut.description %>
+</p>
+
+<%= link_to 'Edit', edit_shortcut_path(@shortcut) %> |
+<%= link_to 'Back', shortcuts_path %>
