@@ -23,15 +23,12 @@ class ShortcutsController < ApplicationController
   # GET /shortcuts/1/edit
   def edit
     puts "#{params[:id]}"
-    puts "---- PARAMS HERE #{params} ----"
     @shortcut = Shortcut.find(params[:id])
-    @steps = @shortcut.steps
-    puts "---- STEPS HERE #{@steps} ----"
+    @steps_array = @shortcut.steps
     @shortcut_tag = ShortcutTag.where(shortcut_id: params[:id])
-    puts "---- SHORTCUT_TAG HERE #{@shortcut_tags} ----"
-    @tags = []
+    @tags_array = []
     @shortcut_tag.each do |value|
-      @tags << Tag.find_by(id: value.tag_id)
+      @tags_array << Tag.find_by(id: value.tag_id)
     end
   end
 
@@ -40,6 +37,7 @@ class ShortcutsController < ApplicationController
   def create
     @shortcut = Shortcut.new(shortcut_params)
     @shortcut.save
+    @steps_array = []
     @step = Step.new(step_params)
     @step.shortcut_id = @shortcut.id
     @step.save

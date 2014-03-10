@@ -19,7 +19,7 @@
   <%= f.input :description, placeholder: 'Brief description for shortcut' %>
   <br />
 
-    <% @steps.each do |step| %>
+    <% @steps_array.each do |step| %>
       <%= simple_fields_for(step) do |step| %>
         <%= step.input :id, :as => :hidden %>
         <%= step.input :step_number, placeholder: 'Step number' %>
@@ -29,7 +29,7 @@
     <% end %>
     <br />
 
-    <% @tags.each do |tag| %>
+    <% @tags_array.each do |tag| %>
       <%= simple_fields_for(tag) do |tag| %>
         <%= tag.input :id, :as => :hidden %>
         <%= tag.input :name, placeholder: 'Tag name' %>
