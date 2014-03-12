@@ -30,8 +30,9 @@ class ShortcutsController < ApplicationController
   # POST /shortcuts
   # POST /shortcuts.json
   def create
-    puts params
+    puts params.to_json
     @shortcut = Shortcut.new(shortcut_params)
+
     respond_to do |format|
       if @shortcut.save
         format.html { redirect_to @shortcut, notice: 'Shortcut was successfully created.' }
@@ -46,6 +47,7 @@ class ShortcutsController < ApplicationController
   # PATCH/PUT /shortcuts/1
   # PATCH/PUT /shortcuts/1.json
   def update
+    puts params
     respond_to do |format|
       if @shortcut.update(shortcut_params)
         format.html { redirect_to @shortcut, notice: 'Shortcut was successfully updated.' }
@@ -75,7 +77,7 @@ class ShortcutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shortcut_params
-      params.require(:shortcut).permit(:title, :description,
+      params.require(:shortcut).permit( :id, :title, :description,
         steps_attributes: [ :id, :step_number, :text, :image_url, :_destroy ],
         tags_attributes: [ :id, :name, :_destroy ])
     end
