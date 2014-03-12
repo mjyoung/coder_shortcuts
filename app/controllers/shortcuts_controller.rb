@@ -95,8 +95,8 @@ class ShortcutsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def shortcut_params
       params.require(:shortcut).permit(:title, :description,
-        steps_attributes: [ :step_number, :text, :image_url ],
-        tags_attributes: [ :name ])
+        steps_attributes: [ :id, :step_number, :text, :image_url ],
+        tags_attributes: [ :id, :name ])
     end
 
     def step_params
