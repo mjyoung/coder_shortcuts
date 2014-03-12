@@ -1,28 +1,27 @@
-== README
+Coder Shortcuts
+===============
+An app to house shortcuts and tips to improve workflow for programmers.
+<http://coder-shortcuts.herokuapp.com>
+***
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Features ###
 
-Things you may want to cover:
+- Add `shortcuts` including instructions for individual `steps` and optional images
+- Add `tags` to shortcuts
+- Search by `shortcuts` or `tags`
 
-* Ruby version
+### Technologies Used ###
 
-* System dependencies
+#### Backend ####
+- Ruby on Rails
+- Devise gem for user registration and authentication
+- Cocoon gem for nested form management
 
-* Configuration
+#### Frontend ####
 
-* Database creation
+- Bootstrap & SASS
+- jQuery
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Michael Young <br />
+[@imMichaelYoung](http://www.twitter.com/immichaelyoung/) <br />
+[LinkedIn](http://www.linkedin.com/in/michaeljy/) <br />
