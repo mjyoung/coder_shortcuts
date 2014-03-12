@@ -15,24 +15,14 @@ class ShortcutsController < ApplicationController
   # GET /shortcuts/new
   def new
     @shortcut = Shortcut.new
-    # 3.times { @shortcut.steps.build }
     @shortcut.steps.build
     @shortcut.tags.build
-    # @step = Step.new
-    # @tag = Tag.new
-    # @shortcut_tag = ShortcutTag.new
   end
 
   # GET /shortcuts/1/edit
   def edit
     puts "#{params[:id]}"
     @shortcut = Shortcut.find(params[:id])
-    # @steps_array = @shortcut.steps
-    # @shortcut_tag = ShortcutTag.where(shortcut_id: params[:id])
-    # @tags_array = []
-    # @shortcut_tag.each do |value|
-    #   @tags_array << Tag.find_by(id: value.tag_id)
-    # end
   end
 
   # POST /shortcuts
@@ -48,15 +38,6 @@ class ShortcutsController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @shortcut.errors, status: :unprocessable_entity }
       end
-    # @steps_array = []
-    # @step = Step.new(step_params)
-    # @step.shortcut_id = @shortcut.id
-    # @step.save
-    # @tag = Tag.new(tag_params)
-    # @tag.save
-
-    # @shortcut_tag = ShortcutTag.new(shortcut_id: @shortcut.id, tag_id: @tag.id)
-    # @shortcut_tag.save
     end
   end
 
@@ -64,9 +45,6 @@ class ShortcutsController < ApplicationController
   # PATCH/PUT /shortcuts/1.json
   def update
     respond_to do |format|
-      # @step = Step.find_by(id: params[:step][:id])
-      # @tag = Tag.find_by(id: params[:tag][:id])
-      # if @shortcut.update(shortcut_params) && @step.update(step_params) && @tag.update(tag_params)
       if @shortcut.update(shortcut_params)
         format.html { redirect_to @shortcut, notice: 'Shortcut was successfully updated.' }
         format.json { head :no_content }
