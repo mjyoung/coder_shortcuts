@@ -1,6 +1,6 @@
 Coder Shortcuts
 ===============
-An app to house shortcuts and tips to improve workflow for programmers.
+An app to house shortcuts and tips to improve workflow for programmers. <br />
 <http://coder-shortcuts.herokuapp.com>
 ***
 
