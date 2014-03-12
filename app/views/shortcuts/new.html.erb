@@ -9,39 +9,6 @@ process for adding a shortcut:
 
 <h1>New shortcut</h1>
 
-<%= simple_form_for(@shortcut) do |f| %>
-  <% if @shortcut.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@shortcut.errors.count, "error") %> prohibited this shortcut from being saved:</h2>
-
-      <ul>
-      <% @shortcut.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <%= f.input :id, :as => :hidden %>
-  <%= f.input :title, placeholder: 'Shortcut Title' %>
-  <%= f.input :description, placeholder: 'Brief description for shortcut' %>
-  <br />
-
-    <%= simple_fields_for(@step) do |step| %>
-      <%= step.input :step_number, placeholder: 'Step number' %>
-      <%= step.input :text, as: :text, placeholder: 'Step text' %>
-      <%= step.input :image_url, placeholder: 'http://i.imgur.com/*.png' %>
-    <% end %>
-    <br />
-
-    <%= simple_fields_for(@tag) do |tag| %>
-      <%= tag.input :id, :as => :hidden %>
-      <%= tag.input :name, placeholder: 'Tag name' %>
-    <% end %>
-
-  <%= f.button :submit %>
-
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', shortcuts_path %>
