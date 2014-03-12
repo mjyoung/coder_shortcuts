@@ -19,17 +19,17 @@
 
     <%= f.simple_fields_for :steps do |builder| %>
       <%= render 'step_fields', :f => builder %>
-      <div class="links">
-        <%= link_to_add_association 'Add Step', f, :steps %>
-      </div>
     <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Step', f, :steps %>
+    </div>
 
     <%= f.simple_fields_for :tags do |builder| %>
       <%= render 'tag_fields', :f => builder %>
-      <div class="links">
-        <%= link_to_add_association 'Add Tag', f, :tags %>
-      </div>
     <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Tag', f, :tags %>
+    </div>
 
     <br />
 
