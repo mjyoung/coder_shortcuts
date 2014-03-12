@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <p>
   <strong>Title:</strong>
@@ -8,6 +8,23 @@
 <p>
   <strong>Description:</strong>
   <%= @shortcut.description %>
+</p>
+
+<p>
+  <strong>Steps:</strong><br />
+  <% @steps.each do |step| %>
+    <%= step.step_number %>. <%= step.text %> <br />
+    <% if step.image_url %>
+      <%= image_tag step.image_url %> <br />
+    <% end %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Tags:</strong><br />
+  <% @tags.each do |tag| %>
+    <%= tag.name %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_shortcut_path(@shortcut) %> |

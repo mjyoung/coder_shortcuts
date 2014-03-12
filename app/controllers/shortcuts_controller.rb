@@ -10,6 +10,8 @@ class ShortcutsController < ApplicationController
   # GET /shortcuts/1
   # GET /shortcuts/1.json
   def show
+    @steps = @shortcut.steps.order(step_number: :asc)
+    @tags = @shortcut.tags.order(name: :asc)
   end
 
   # GET /shortcuts/new
