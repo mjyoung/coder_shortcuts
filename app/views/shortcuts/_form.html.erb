@@ -18,15 +18,17 @@
   <br />
 
     <%= f.simple_fields_for :steps do |builder| %>
-      <%= builder.input :id, :as => :hidden %>
-      <%= builder.input :step_number, placeholder: 'Step number' %>
-      <%= builder.input :text, as: :text, placeholder: 'Step text' %>
-      <%= builder.input :image_url, placeholder: 'http://i.imgur.com/*.png' %>
+      <%= render 'step_fields', :f => builder %>
+      <div class="links">
+        <%= link_to_add_association 'Add Step', f, :steps %>
+      </div>
     <% end %>
 
     <%= f.simple_fields_for :tags do |builder| %>
-      <%= builder.input :id, :as => :hidden %>
-      <%= builder.input :name, placeholder: 'Tag name' %>
+      <%= render 'tag_fields', :f => builder %>
+      <div class="links">
+        <%= link_to_add_association 'Add Tag', f, :tags %>
+      </div>
     <% end %>
 
     <br />

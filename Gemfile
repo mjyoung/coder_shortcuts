@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'simple_form'
+gem 'cocoon' # better nested_form?
+# gem 'nested_form'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

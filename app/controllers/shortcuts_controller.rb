@@ -15,8 +15,9 @@ class ShortcutsController < ApplicationController
   # GET /shortcuts/new
   def new
     @shortcut = Shortcut.new
-    3.times { @shortcut.steps.build }
-    3.times { @shortcut.tags.build }
+    # 3.times { @shortcut.steps.build }
+    @shortcut.steps.build
+    @shortcut.tags.build
     # @step = Step.new
     # @tag = Tag.new
     # @shortcut_tag = ShortcutTag.new
@@ -95,8 +96,8 @@ class ShortcutsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def shortcut_params
       params.require(:shortcut).permit(:title, :description,
-        steps_attributes: [ :id, :step_number, :text, :image_url ],
-        tags_attributes: [ :id, :name ])
+        steps_attributes: [ :id, :step_number, :text, :image_url, :_destroy ],
+        tags_attributes: [ :id, :name, :_destroy ])
     end
 
     def step_params

@@ -11,4 +11,5 @@
 </p>
 
 <%= link_to 'Edit', edit_shortcut_path(@shortcut) %> |
+<%= link_to 'Destroy', @shortcut, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', shortcuts_path %>

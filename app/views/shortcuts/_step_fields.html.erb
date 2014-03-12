@@ -1,0 +1,7 @@
+<div class="nested-fields">
+  <%= f.input :id, :as => :hidden %>
+  <%= f.input :step_number, placeholder: 'Step number' %>
+  <%= f.input :text, as: :text, placeholder: 'Step text' %>
+  <%= f.input :image_url, placeholder: 'http://i.imgur.com/*.png' %>
+  <%= link_to_remove_association "Remove Step", f %>
+</div>
