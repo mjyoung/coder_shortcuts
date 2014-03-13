@@ -25,18 +25,11 @@
     </div>
 
     <br />
-    Tags: <br />
-    <%= f.simple_fields_for :tags do |builder| %>
-      <%= render 'tag_fields', :f => builder %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'Add Tag', f, :tags %>
-    </div>
+    Tags (comma separated): <br />
+    <input type="text" name="tags_string" value="<%= @tags_string %>" />
 
-    <br />
+    <br /><br />
 
   <%= f.button :submit %>
-
-  <% puts params %>
 
 <% end %>

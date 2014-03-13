@@ -19,12 +19,17 @@ class ShortcutsController < ApplicationController
     @shortcut = Shortcut.new
     @shortcut.steps.build
     @shortcut.tags.build
+    @tags_string = ""
   end
 
   # GET /shortcuts/1/edit
   def edit
     puts "#{params[:id]}"
     @shortcut = Shortcut.find(params[:id])
+
+    tags_array = []
+    @shortcut.tags.each { |tag| tags_array << tag.name }
+    @tags_string = tags_array.join(", ")
   end
 
   # POST /shortcuts
@@ -33,11 +38,7 @@ class ShortcutsController < ApplicationController
     puts params.to_json
     @shortcut = Shortcut.new(shortcut_params)
 
-    tag_arr = []
-    @shortcut.tags.each do |tag|
-      tag_arr << Tag.find_or_create_by(name: tag.name.downcase)
-    end
-    @shortcut.tags = tag_arr
+    tags_string_to_tags
 
     respond_to do |format|
       if @shortcut.save
@@ -53,13 +54,9 @@ class ShortcutsController < ApplicationController
   # PATCH/PUT /shortcuts/1
   # PATCH/PUT /shortcuts/1.json
   def update
-    puts params
+    puts params.to_json
 
-    tag_arr = []
-    @shortcut.tags.each do |tag|
-      tag_arr << Tag.find_or_create_by(name: tag.name.downcase)
-    end
-    @shortcut.tags = tag_arr
+    tags_string_to_tags
 
     respond_to do |format|
       if @shortcut.update(shortcut_params)
@@ -86,6 +83,17 @@ class ShortcutsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_shortcut
       @shortcut = Shortcut.find(params[:id])
+    end
+
+    def tags_string_to_tags
+      tags_string = params['tags_string']
+      tags_array = tags_string.downcase.split(",").map(&:strip)
+
+      tags = []
+      tags_array.each do |tag|
+        tags << Tag.find_or_create_by(name: tag)
+      end
+      @shortcut.tags = tags
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
