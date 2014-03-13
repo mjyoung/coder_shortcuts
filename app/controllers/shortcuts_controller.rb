@@ -33,6 +33,12 @@ class ShortcutsController < ApplicationController
     puts params.to_json
     @shortcut = Shortcut.new(shortcut_params)
 
+    tag_arr = []
+    @shortcut.tags.each do |tag|
+      tag_arr << Tag.find_or_create_by(name: tag.name.downcase)
+    end
+    @shortcut.tags = tag_arr
+
     respond_to do |format|
       if @shortcut.save
         format.html { redirect_to @shortcut, notice: 'Shortcut was successfully created.' }
@@ -48,6 +54,13 @@ class ShortcutsController < ApplicationController
   # PATCH/PUT /shortcuts/1.json
   def update
     puts params
+
+    tag_arr = []
+    @shortcut.tags.each do |tag|
+      tag_arr << Tag.find_or_create_by(name: tag.name.downcase)
+    end
+    @shortcut.tags = tag_arr
+
     respond_to do |format|
       if @shortcut.update(shortcut_params)
         format.html { redirect_to @shortcut, notice: 'Shortcut was successfully updated.' }

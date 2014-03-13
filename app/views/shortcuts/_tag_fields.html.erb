@@ -1,5 +1,9 @@
 <div class="nested-fields">
   <%= f.input :id, :as => :hidden %>
-  <%= f.input :name, placeholder: 'Tag name' %>
+  <% if @shortcut.id %>
+    <%= f.input :name, label: false %>
+  <% else %>
+    <%= f.input :name, placeholder: 'Tag name', label: false %>
+  <% end %>
   <%= link_to_remove_association "Remove Tag", f %>
 </div>

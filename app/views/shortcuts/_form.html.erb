@@ -24,6 +24,8 @@
       <%= link_to_add_association 'Add Step', f, :steps %>
     </div>
 
+    <br />
+    Tags: <br />
     <%= f.simple_fields_for :tags do |builder| %>
       <%= render 'tag_fields', :f => builder %>
     <% end %>
