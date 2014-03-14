@@ -23,6 +23,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'hirb'
   gem 'pry'
+  gem 'better_errors'
 
   # so we can use: rails generate layout:install bootstrap3 --force
   gem 'rails_layout'
