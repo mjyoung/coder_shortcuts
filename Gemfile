@@ -3,16 +3,20 @@ ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
-gem 'bootstrap-sass'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-gem 'simple_form'
-gem 'cocoon' # better nested_form?
-# gem 'nested_form'
+gem 'bootstrap-sass', '3.1.1.0'
+gem 'sass-rails', '4.0.1'
+gem 'uglifier', '2.4.0'
+gem 'coffee-rails', '4.0.1'
+gem 'jquery-rails', '3.1.0'
+gem 'turbolinks', '2.2.1'
+gem 'jbuilder', '2.0.4'
+
+# simple_form with easy nested_forms using cocoon
+gem 'simple_form', '3.0.1'
+gem 'cocoon', '1.2.5'
+
+
+gem 'sprockets', '2.11.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -20,19 +24,20 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'sqlite3'
-  gem 'hirb'
-  gem 'pry'
-  gem 'better_errors'
+  gem 'sqlite3', '1.3.9'
+  gem 'hirb', '0.7.1'
+  gem 'pry', '0.9.12.6'
+  gem 'better_errors', '1.1.0'
+  gem 'binding_of_caller', '0.7.2'
 
   # so we can use: rails generate layout:install bootstrap3 --force
-  gem 'rails_layout'
+  gem 'rails_layout', '1.0.11'
 
 end
 
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+  gem 'pg', '0.17.1'
+  gem 'rails_12factor', '0.0.2'
 end
 
 # Use ActiveModel has_secure_password
