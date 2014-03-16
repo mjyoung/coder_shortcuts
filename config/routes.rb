@@ -1,12 +1,7 @@
 Shortcuts::Application.routes.draw do
-  get "tips/index"
-  get "tips/show"
-  get "tips/new"
-  get "tips/edit"
-  get "tips/create"
-  get "tips/update"
-  get "tips/destroy"
-  root 'shortcuts#index'
+
+  devise_for :users
+  root to: 'shortcuts#index'
 
   resources :tags
 
