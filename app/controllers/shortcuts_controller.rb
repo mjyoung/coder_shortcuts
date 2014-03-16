@@ -37,7 +37,9 @@ class ShortcutsController < ApplicationController
   # POST /shortcuts.json
   def create
     puts params.to_json
+    puts "#{current_user} #{current_user.id} #{current_user.email} #{current_user.username}"
     @shortcut = Shortcut.new(shortcut_params)
+    @shortcut.user = current_user
 
     tags_string_to_tags
 

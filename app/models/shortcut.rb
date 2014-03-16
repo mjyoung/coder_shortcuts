@@ -1,4 +1,5 @@
 class Shortcut < ActiveRecord::Base
+  belongs_to :user
   has_many :steps, :dependent => :destroy
 
   has_many :shortcut_tags, :dependent => :destroy
