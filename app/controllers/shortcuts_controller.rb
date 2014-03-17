@@ -13,6 +13,8 @@ class ShortcutsController < ApplicationController
   def show
     @steps = @shortcut.steps.order(step_number: :asc)
     @tags = @shortcut.tags.order(name: :asc)
+    @user = @shortcut.user.username
+    @last_modified = @shortcut.updated_at.to_date
   end
 
   # GET /shortcuts/new
