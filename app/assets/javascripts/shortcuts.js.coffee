@@ -5,7 +5,8 @@
 $ ->
 
   # Pagination links.
-  $(document).on "click", "#shortcuts_table .pagination a", ->
+  $(document).on "click", ".pagination a", ->
+    console.log $(".pagination a")
     $.getScript @href
     false
 
@@ -13,6 +14,12 @@ $ ->
   # Search form.
   $("#shortcuts_search").submit ->
     $.get @action, $(this).serialize(), null, "script"
+    false
+
+
+  # AJAX to update results as you type
+  $("#shortcuts_search input").keyup ->
+    $.get $("#shortcuts_search").attr("action"), $("#shortcuts_search").serialize(), null, "script"
     false
 
   return
