@@ -18,11 +18,13 @@ An app to house shortcuts and tips to improve workflow for programmers. <br />
 - Ruby on Rails
 - Devise gem for user registration and authentication
 - Cocoon gem for nested form management
+- will_paginate for easy results pagination
 
 #### Frontend ####
 
 - Bootstrap & SASS
 - jQuery
+- AJAX to autoupdate search and pagination results without reloading page
 
 - - -
 
