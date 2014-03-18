@@ -1,5 +1,13 @@
 <h1>Listing shortcuts</h1>
 
+<%= form_tag shortcuts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Tags", :tag => nil %>
+  </p>
+<% end %>
+
+
 <table>
   <thead>
     <tr>
