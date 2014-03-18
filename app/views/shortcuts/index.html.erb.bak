@@ -26,6 +26,4 @@
 
 <br>
 
-<%= will_paginate @shortcuts %>
-
 <%= link_to 'New Shortcut', new_shortcut_path %>

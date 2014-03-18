@@ -5,7 +5,7 @@ class ShortcutsController < ApplicationController
   # GET /shortcuts
   # GET /shortcuts.json
   def index
-    @shortcuts = Shortcut.all
+    @shortcuts = Shortcut.all.paginate(:per_page => 5, :page => params[:page])
   end
 
   # GET /shortcuts/1

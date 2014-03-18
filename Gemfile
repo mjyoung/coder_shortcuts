@@ -19,6 +19,7 @@ gem 'sprockets', '2.11.0'
 
 gem 'devise', '3.2.3'
 gem 'omniauth-twitter', '1.0.1'
+gem 'will_paginate', '3.0.5'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
