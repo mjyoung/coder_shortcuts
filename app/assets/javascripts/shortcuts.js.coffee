@@ -6,7 +6,6 @@ $ ->
 
   # Pagination links.
   $(document).on "click", ".pagination a", ->
-    console.log $(".pagination a")
     $.getScript @href
     false
 
