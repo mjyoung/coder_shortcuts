@@ -1,7 +1,11 @@
 Shortcuts::Application.routes.draw do
 
+  get "static_pages/index"
+  get "static_pages/about"
   devise_for :users
-  root to: 'shortcuts#index'
+
+  root to: 'static_pages#index'
+  # root to: 'shortcuts#index'
 
   resources :tags
 
