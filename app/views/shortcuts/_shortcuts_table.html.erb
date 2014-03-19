@@ -15,8 +15,10 @@
         <td><%= shortcut.title %></td>
         <td><%= shortcut.description %></td>
         <td><%= link_to 'Show', shortcut %></td>
-        <td><%= link_to 'Edit', edit_shortcut_path(shortcut) %></td>
-        <td><%= link_to 'Destroy', shortcut, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user == shortcut.user %>
+          <td><%= link_to 'Edit', edit_shortcut_path(shortcut) %></td>
+          <td><%= link_to 'Destroy', shortcut, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

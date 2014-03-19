@@ -19,6 +19,7 @@ class ShortcutsController < ApplicationController
 
   # GET /shortcuts/new
   def new
+    redirect_to shortcuts_url, alert: 'You must be signed in to create a new shortcut.' unless current_user
     @shortcut = Shortcut.new
     @shortcut.steps.build
     @shortcut.tags.build
@@ -29,6 +30,7 @@ class ShortcutsController < ApplicationController
   def edit
     puts "#{params[:id]}"
     @shortcut = Shortcut.find(params[:id])
+    redirect_to @shortcut unless current_user == @shortcut.user
 
     tags_array = []
     @shortcut.tags.each { |tag| tags_array << tag.name }
