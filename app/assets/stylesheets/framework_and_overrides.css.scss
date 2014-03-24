@@ -1,6 +1,21 @@
 // import the CSS framework
 @import "bootstrap";
 
+// Custom variables for SCSS
+$powder-blue: rgb(182, 212, 214);
+$light-beige: rgb(255, 254, 233);
+
+html, .navbar {
+  // background-color: grey;
+  // background-color: #6EBAB0;
+  background-color: $powder-blue;
+}
+
+.navbar-inverse {
+  border-color: #68878A;
+}
+
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -34,15 +49,46 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
-  padding-bottom: 80px;
+  background-color: $light-beige;
+  // background-color: #FFFFFF;
+  padding-bottom: 50px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
+  // min-height: 600px;
+
   }
 section {
   @extend .row;
   margin-top: 20px;
   }
+
+#title {
+  font-size: 3em;
+  margin-top: 20px;
+  line-height: 100%;
+  color: #FFF;
+}
+
+#landing {
+  background-image: url('forest_path_1536.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 600px;
+}
+
+#jumbo-landing {
+  // margin-left: 50px;
+  margin-top: 50px;
+  width: 50%;
+  // opacity: 0.5;
+  // background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(182, 212, 214, 0.5);
+  color: white;
+}
+
+#browse {
+  color: white;
+}
 
 #user_links {
   color: white;
