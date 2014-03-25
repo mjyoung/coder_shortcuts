@@ -1,3 +1,4 @@
+<!--
 <table>
   <thead>
     <tr>
@@ -23,5 +24,17 @@
     <% end %>
   </tbody>
 </table>
+-->
+
+
+<div class="list-group">
+  <% @shortcuts.each do |shortcut| %>
+    <%= link_to shortcut, class: "list-group-item list-group-item-warning" do %>
+      <%= shortcut.title %>
+      <span class="badge">14</span>
+    <% end %>
+  <% end %>
+</div>
+
 
 <%= will_paginate @shortcuts %>
