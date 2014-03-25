@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Custom variables for SCSS
+$powder-blue: rgb(182, 212, 214);
+$light-beige: rgb(255, 254, 233);
+$btn-red: #d83c3c;
+$btn-red-hover: #c42f2f;
+$btn-blue: #428bca;
+$btn-blue-hover: #3276b1;
 
 /* SEARCH BAR BEGIN */
 
@@ -80,8 +87,7 @@
     font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
     color: #fff;
     text-transform: uppercase;
-    // background: #d83c3c; // red
-    background: #5cb85c;
+    background: $btn-blue;
     -moz-border-radius: 0 3px 3px 0;
     -webkit-border-radius: 0 3px 3px 0;
     border-radius: 0 3px 3px 0;
@@ -89,11 +95,11 @@
   }
 
   button:hover{
-    background: #47a447;
+    background: $btn-blue-hover;
   }
 
   button:active, button:focus {
-    background: #47a447;
+    background: $btn-blue-hover;
     outline: 0;
   }
 
@@ -102,18 +108,17 @@
     position: absolute;
     border-width: 8px 8px 8px 0;
     border-style: solid solid solid none;
-    border-color: transparent #5cb85c transparent;
-    // border-color: transparent #d83c3c transparent;
+    border-color: transparent $btn-blue transparent;
     top: 12px;
     left: -6px;
   }
 
   button:hover:before{
-    border-right-color: #47a447;
+    border-right-color: $btn-blue-hover;
   }
 
   button:focus:before, button:active:before {
-    border-right-color: #47a447;
+    border-right-color: $btn-blue-hover;
   }
 
   button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
@@ -121,28 +126,5 @@
     padding: 0;
   }
 }
-
-.search-submit {
-  color: white;
-  background-color: #5cb85c;
-  border-color: #4cae4c; }
-.search-submit:hover, .search-submit:focus, .search-submit:active, .search-submit.active {
-  color: white;
-  background-color: #47a447;
-  border-color: #398439; }
-.open .search-submit.dropdown-toggle {
-  color: white;
-  background-color: #47a447;
-  border-color: #398439; }
-.search-submit:active, .search-submit.active {
-  background-image: none; }
-.open .search-submit.dropdown-toggle {
-  background-image: none; }
-.search-submit.disabled, .search-submit.disabled:hover, .search-submit.disabled:focus, .search-submit.disabled:active, .search-submit.disabled.active, .search-submit[disabled], .search-submit[disabled]:hover, .search-submit[disabled]:focus, .search-submit[disabled]:active, .search-submit[disabled].active, fieldset[disabled] .search-submit, fieldset[disabled] .search-submit:hover, fieldset[disabled] .search-submit:focus, fieldset[disabled] .search-submit:active, fieldset[disabled] .search-submit.active {
-  background-color: #5cb85c;
-  border-color: #4cae4c; }
-.search-submit .badge {
-  color: #5cb85c;
-  background-color: white; }
 
 /* SEARCH BAR END */
