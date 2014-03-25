@@ -28,6 +28,9 @@ Shortcuts::Application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+  config.assets.precompile += %w( bootstrap.css )
+
+
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -77,4 +80,5 @@ Shortcuts::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
 end
