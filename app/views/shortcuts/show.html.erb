@@ -20,7 +20,11 @@
 <p>
   <strong>Tags:</strong><br />
   <% @tags.each do |tag| %>
-    <%= tag.name %>
+    <% if tag == @tags.last %>
+      <%= tag.name %>
+    <% else %>
+      <%= "#{tag.name}, " %>
+    <% end %>
   <% end %>
 </p>
 

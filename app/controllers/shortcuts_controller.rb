@@ -24,6 +24,7 @@ class ShortcutsController < ApplicationController
     @shortcut.steps.build
     @shortcut.tags.build
     @tags_string = ""
+
   end
 
   # GET /shortcuts/1/edit
@@ -94,7 +95,12 @@ class ShortcutsController < ApplicationController
 
     def tags_string_to_tags
       tags_string = params['tags_string']
+
+      puts "tags_string: #{tags_string}"
+
       tags_array = tags_string.downcase.split(",").map(&:strip)
+
+      puts "tags_array: #{tags_array}"
 
       tags = []
       tags_array.each do |tag|
