@@ -27,8 +27,12 @@ end
 
 group :development, :test do
   gem 'sqlite3', '1.3.9'
-  gem 'hirb', '0.7.1'
-  gem 'pry', '0.9.12.6'
+
+  # jazz_hands comes with hirb, pry, and awesome_print
+  gem 'jazz_hands'
+  # gem 'hirb', '0.7.1'
+  # gem 'pry', '0.9.12.6'
+
   gem 'better_errors', '1.1.0'
   gem 'binding_of_caller', '0.7.2'
 
