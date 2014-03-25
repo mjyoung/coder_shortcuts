@@ -1,10 +1,8 @@
-<h1>Listing shortcuts</h1>
 
-<%= form_tag shortcuts_path, :method => 'get', :id => "shortcuts_search" do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Tags", :tag => nil %>
-  </p>
+
+<%= form_tag shortcuts_path, :method => 'get', :id => "shortcuts_search", :class => "form-wrapper cf" do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search for a shortcut tag here" %>
+    <%= button_tag "Search Tags", :class => "search-submit", :tag => nil %>
 <% end %>
 
 <div id="shortcuts_table">
